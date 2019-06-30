@@ -14,7 +14,7 @@ yarn add messenger-json-schema
 
 ## Format
 
-Provides schemas for JSON formatted [Facebook Messenger messages](https://developers.facebook.com/docs/messenger-platform/send-messages). Validates against [ajv](https://github.com/epoberezkin/ajv) format.
+Provides schemas for JSON formatted [Facebook Messenger messages](https://developers.facebook.com/docs/messenger-platform/send-messages). Validates against JSON schema using [ajv](https://github.com/epoberezkin/ajv) format.
 
 ## References
 
