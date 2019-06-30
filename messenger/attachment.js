@@ -15,6 +15,16 @@ const attachmentSchema = {
                 },
                 payload: {
                     type: 'object',
+                    required: ['url'],
+                    properties: {
+                        url: {
+                            type: 'string',
+                            format: 'uri'
+                        },
+                        is_reusable: {
+                            type: 'boolean'
+                        },
+                    }
                 }
             }
         }

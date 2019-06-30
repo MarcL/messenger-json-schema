@@ -3,6 +3,7 @@ const ajv = new Ajv({allErrors: true});
 const attachmentSchema = require('./attachment');
 
 describe('Attachment message', () => {
+    const validImageUri = 'https://www.test.com/test-image.jpg';
     let validate;
     
     beforeEach(() => {
@@ -13,7 +14,7 @@ describe('Attachment message', () => {
             attachment: {
                 type: 'image',
                 payload: {
-                    url: 'https://www.test.com/test-image.jpg',
+                    url: validImageUri,
                     is_reusable: true
                 }
             }
@@ -26,23 +27,67 @@ describe('Attachment message', () => {
 
     describe('Invalid message', () => {
         const invalidScenarios = [
-            // {
-            //     testMessage: 'Message is not a string',
-            //     givenMessage: {
-            //         text: 100
-            //     }
-            // },
-            // {
-            //     testMessage: 'Message missing text property',
-            //     givenMessage: {}
-            // },
-            // {
-            //     testMessage: 'Message contains additional properties',
-            //     givenMessage: {
-            //         text: 'Message',
-            //         invalid: 'Invalid property'
-            //     }
-            // }
+            {
+                testMessage: 'Message has no attachment property',
+                givenMessage: {}
+            },
+            {
+                testMessage: 'Message has no attachment.type property',
+                givenMessage: {
+                    attachment: {}
+                }
+            },
+            {
+                testMessage: 'Message has no attachment.payload property',
+                givenMessage: {
+                    attachment: {
+                        type: 'image'
+                    }
+                }
+            },
+            {
+                testMessage: 'Message has no attachment.payload.url property',
+                givenMessage: {
+                    attachment: {
+                        type: 'image',
+                        payload: {}
+                    }
+                }
+            },
+            {
+                testMessage: 'Message has invalid attachment.payload.url property',
+                givenMessage: {
+                    attachment: {
+                        type: 'image',
+                        payload: {
+                            url: 'not-a-uri'
+                        }
+                    }
+                }
+            },
+            {
+                testMessage: 'Message has invalid attachment.type property',
+                givenMessage: {
+                    attachment: {
+                        type: 'invalid attachment type',
+                        payload: {
+                            url: validImageUri
+                        }
+                    }
+                }
+            },
+            {
+                testMessage: 'Message has invalid attachment.payload.is_reusable property type',
+                givenMessage: {
+                    attachment: {
+                        type: 'image',
+                        payload: {
+                            url: validImageUri,
+                            is_reusable: 'not a boolean'
+                        }
+                    }
+                }
+            },
         ];
 
         invalidScenarios.forEach(scenario => {
