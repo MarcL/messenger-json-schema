@@ -1,0 +1,15 @@
+{
+  "name": "messenger-json-schema",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:MarcL/messenger-json-schema.git",
+  "author": "Marc Littlemore <marc.littlemore@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ajv": "^6.10.0",
+    "jest": "^24.8.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
