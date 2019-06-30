@@ -1,19 +1,26 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
-const textMessageSchema = require('./text');
+const textSchema = require('./text');
 
-const validate = ajv.compile(textMessageSchema);
 
 describe('Text message', () => {
-    test('Valid text message', () => {
+    let validate;
+    
+    beforeEach(() => {
+        validate = ajv.compile(textSchema);
+    });
+
+    test('Valid message', () => {
         const givenMessage = {
             text: 'Valid message'
         };
 
-        expect(validate(givenMessage)).toBeTruthy();
+        validate(givenMessage);
+        
+        expect(validate.errors).toBeNull();
     });
 
-    describe('Invalid text message', () => {
+    describe('Invalid message', () => {
         const invalidScenarios = [
             {
                 testMessage: 'Message is not a string',
@@ -38,8 +45,21 @@ describe('Text message', () => {
             const {testMessage, givenMessage} = scenario;
 
             test(testMessage, () => {        
-                expect(validate(givenMessage)).toBeFalsy();
+                validate(givenMessage);
+
+                expect(validate.errors).not.toBeNull();
             });
+        });
+
+        test('Message length is greater than 2000 characters', () => {
+            const message = new Array(2001).fill('a').join('');
+            const givenMessage = {
+                text: message
+            };
+
+            validate(givenMessage);
+
+            expect(validate.errors).not.toBeNull();
         });
     });
 });
