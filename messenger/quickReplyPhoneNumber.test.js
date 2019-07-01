@@ -2,7 +2,7 @@ const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 const quickReplyPhoneNumber = require('./quickReplyPhoneNumber');
 
-describe('Quick reply: email message', () => {
+describe('Quick reply: phone number message', () => {
     let validate;
     
     beforeEach(() => {
