@@ -9,13 +9,29 @@ describe('Attachment message', () => {
     beforeEach(() => {
         validate = ajv.compile(attachmentSchema);
     })
-    test('Valid message', () => {
+
+    test('Valid message with url', () => {
         const givenMessage = {
             attachment: {
                 type: 'image',
                 payload: {
                     url: validImageUri,
                     is_reusable: true
+                }
+            }
+        };
+
+        validate(givenMessage);
+        
+        expect(validate.errors).toBeNull();
+    });
+
+    test('Valid message with attachment_id', () => {
+        const givenMessage = {
+            attachment: {
+                type: 'image',
+                payload: {
+                    attachment_id: '123456789'
                 }
             }
         };

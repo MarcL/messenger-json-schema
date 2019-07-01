@@ -23,7 +23,7 @@ https://developers.facebook.com/docs/messenger-platform/reference/send-api/
 |Message type|Implemented|Comment|
 |---|---|---|
 |[Text](https://developers.facebook.com/docs/messenger-platform/send-messages#sending_text)|:white_check_mark:|-|
-|[Attachment](https://developers.facebook.com/docs/messenger-platform/send-messages#sending_attachments)|:x:|Missing file attachment|
+|[Attachment](https://developers.facebook.com/docs/messenger-platform/send-messages#sending_attachments)|:white_check_mark:|-|
 |[Quick replies](https://developers.facebook.com/docs/messenger-platform/send-messages/quick-replies)|:x:|-|
 
 

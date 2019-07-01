@@ -15,7 +15,6 @@ const attachmentSchema = {
                 },
                 payload: {
                     type: 'object',
-                    required: ['url'],
                     properties: {
                         url: {
                             type: 'string',
@@ -24,7 +23,18 @@ const attachmentSchema = {
                         is_reusable: {
                             type: 'boolean'
                         },
-                    }
+                        attachment_id: {
+                            type: 'string'
+                        }
+                    },
+                    oneOf: [
+                        {
+                            required: ['url']
+                        },
+                        {
+                            required: ['attachment_id']
+                        }
+                    ]
                 }
             }
         }
