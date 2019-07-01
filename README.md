@@ -26,7 +26,7 @@ https://developers.facebook.com/docs/messenger-platform/reference/send-api/
 |[Attachment](https://developers.facebook.com/docs/messenger-platform/send-messages#sending_attachments)|:white_check_mark:|
 |[Quick reply: Email](https://developers.facebook.com/docs/messenger-platform/send-messages/quick-replies#email)|:white_check_mark:|
 |[Quick reply: Phone number](https://developers.facebook.com/docs/messenger-platform/send-messages/quick-replies#phone)|:white_check_mark:|
-|[Quick reply: Text](https://developers.facebook.com/docs/messenger-platform/send-messages/quick-replies#text)|:x:|
+|[Quick reply: Text](https://developers.facebook.com/docs/messenger-platform/send-messages/quick-replies#text)|:white_check_mark:|
 
 ## References
 
