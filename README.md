@@ -1,6 +1,6 @@
 # messenger-json-schema
 
-> JSON schema for Messenger messages
+> WIP: JSON schema for Messenger messages
 
 ## Install
 
@@ -15,6 +15,17 @@ yarn add messenger-json-schema
 ## Format
 
 Provides schemas for JSON formatted [Facebook Messenger messages](https://developers.facebook.com/docs/messenger-platform/send-messages). Validates against JSON schema using [ajv](https://github.com/epoberezkin/ajv) format.
+
+## Supported Messages
+
+https://developers.facebook.com/docs/messenger-platform/reference/send-api/
+
+|Message type|Implemented|Comment|
+|---|---|---|
+|[Text](https://developers.facebook.com/docs/messenger-platform/send-messages#sending_text)|:white_check_mark:|-|
+|[Attachment](https://developers.facebook.com/docs/messenger-platform/send-messages#sending_attachments)|:x:|Missing file attachment|
+|[Quick replies](https://developers.facebook.com/docs/messenger-platform/send-messages/quick-replies)|:x:|-|
+
 
 ## References
 
