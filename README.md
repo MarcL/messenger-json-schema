@@ -21,7 +21,7 @@ Provides schemas for JSON formatted [Facebook Messenger messages](https://develo
 https://developers.facebook.com/docs/messenger-platform/reference/send-api/
 
 |Message type|Implemented|
-|---|---|
+|---|:---:|
 |[Text](https://developers.facebook.com/docs/messenger-platform/send-messages#sending_text)|:white_check_mark:|
 |[Attachment](https://developers.facebook.com/docs/messenger-platform/send-messages#sending_attachments)|:white_check_mark:|
 |[Quick reply: Email](https://developers.facebook.com/docs/messenger-platform/send-messages/quick-replies#email)|:white_check_mark:|
