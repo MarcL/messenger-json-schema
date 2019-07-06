@@ -1,16 +1,16 @@
 const ajv = require('./ajv');
-const textSchema = require('./text');
+const quickReplyPhoneNumber = require('../messenger/quickReplyPhoneNumber');
 
-describe('Text message', () => {
+describe('Quick reply: phone number message', () => {
     let validate;
     
     beforeEach(() => {
-        validate = ajv.compile(textSchema);
+        validate = ajv.compile(quickReplyPhoneNumber);
     });
 
     test('Valid message', () => {
         const givenMessage = {
-            text: 'Valid message'
+            content_type: 'user_phone_number'
         };
 
         validate(givenMessage);
@@ -23,18 +23,24 @@ describe('Text message', () => {
             {
                 testMessage: 'Message is not a string',
                 givenMessage: {
-                    text: 100
+                    content_type: 100
                 }
             },
             {
-                testMessage: 'Message missing text property',
+                testMessage: 'Message missing content_type property',
                 givenMessage: {}
             },
             {
                 testMessage: 'Message contains additional properties',
                 givenMessage: {
-                    text: 'Message',
+                    content_type: 'user_phone_number',
                     invalid: 'Invalid property'
+                }
+            },
+            {
+                testMessage: 'Message contains invalid content_type property',
+                givenMessage: {
+                    content_type: 'not_user_email'
                 }
             }
         ];
@@ -47,17 +53,6 @@ describe('Text message', () => {
 
                 expect(validate.errors).toMatchSnapshot();
             });
-        });
-
-        test('Message length is greater than 2000 characters', () => {
-            const message = new Array(2001).fill('a').join('');
-            const givenMessage = {
-                text: message
-            };
-
-            validate(givenMessage);
-
-            expect(validate.errors).toMatchSnapshot();
         });
     });
 });

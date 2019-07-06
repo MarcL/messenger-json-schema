@@ -1,16 +1,16 @@
 const ajv = require('./ajv');
-const quickReplyPhoneNumber = require('./quickReplyPhoneNumber');
+const quickReplyEmail = require('../messenger/quickReplyEmail');
 
-describe('Quick reply: phone number message', () => {
+describe('Quick reply: email message', () => {
     let validate;
     
     beforeEach(() => {
-        validate = ajv.compile(quickReplyPhoneNumber);
+        validate = ajv.compile(quickReplyEmail);
     });
 
     test('Valid message', () => {
         const givenMessage = {
-            content_type: 'user_phone_number'
+            content_type: 'user_email'
         };
 
         validate(givenMessage);
@@ -33,7 +33,7 @@ describe('Quick reply: phone number message', () => {
             {
                 testMessage: 'Message contains additional properties',
                 givenMessage: {
-                    content_type: 'user_phone_number',
+                    content_type: 'user_email',
                     invalid: 'Invalid property'
                 }
             },

@@ -1,5 +1,5 @@
-const quickReplyText = require('./quickReplyText');
 const ajv = require('./ajv');
+const quickReplyText = require('../messenger/quickReplyText');
 
 describe('Quick reply: text message', () => {
     let validate;

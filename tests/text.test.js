@@ -1,16 +1,16 @@
 const ajv = require('./ajv');
-const quickReplyEmail = require('./quickReplyEmail');
+const textSchema = require('../messenger/text');
 
-describe('Quick reply: email message', () => {
+describe('Text message', () => {
     let validate;
     
     beforeEach(() => {
-        validate = ajv.compile(quickReplyEmail);
+        validate = ajv.compile(textSchema);
     });
 
     test('Valid message', () => {
         const givenMessage = {
-            content_type: 'user_email'
+            text: 'Valid message'
         };
 
         validate(givenMessage);
@@ -23,24 +23,18 @@ describe('Quick reply: email message', () => {
             {
                 testMessage: 'Message is not a string',
                 givenMessage: {
-                    content_type: 100
+                    text: 100
                 }
             },
             {
-                testMessage: 'Message missing content_type property',
+                testMessage: 'Message missing text property',
                 givenMessage: {}
             },
             {
                 testMessage: 'Message contains additional properties',
                 givenMessage: {
-                    content_type: 'user_email',
+                    text: 'Message',
                     invalid: 'Invalid property'
-                }
-            },
-            {
-                testMessage: 'Message contains invalid content_type property',
-                givenMessage: {
-                    content_type: 'not_user_email'
                 }
             }
         ];
@@ -53,6 +47,17 @@ describe('Quick reply: email message', () => {
 
                 expect(validate.errors).toMatchSnapshot();
             });
+        });
+
+        test('Message length is greater than 2000 characters', () => {
+            const message = new Array(2001).fill('a').join('');
+            const givenMessage = {
+                text: message
+            };
+
+            validate(givenMessage);
+
+            expect(validate.errors).toMatchSnapshot();
         });
     });
 });

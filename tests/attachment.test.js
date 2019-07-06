@@ -1,5 +1,5 @@
 const ajv = require('./ajv');
-const attachmentSchema = require('./attachment');
+const attachmentSchema = require('../messenger/attachment');
 
 describe('Attachment message', () => {
     const validImageUri = 'https://www.test.com/test-image.jpg';
