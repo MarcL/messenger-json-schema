@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quick reply: text message Invalid message Message contains additional properties 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "additionalProperties",
+    "message": "should NOT have additional properties",
+    "params": Object {
+      "additionalProperty": "invalid",
+    },
+    "schemaPath": "#/additionalProperties",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message contains invalid content_type property 1`] = `
+Array [
+  Object {
+    "dataPath": ".content_type",
+    "keyword": "enum",
+    "message": "should be equal to one of the allowed values",
+    "params": Object {
+      "allowedValues": Array [
+        "text",
+      ],
+    },
+    "schemaPath": "#/properties/content_type/enum",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message contains invalid image_url property 1`] = `
+Array [
+  Object {
+    "dataPath": ".image_url",
+    "keyword": "format",
+    "message": "should match format \\"uri\\"",
+    "params": Object {
+      "format": "uri",
+    },
+    "schemaPath": "#/properties/image_url/format",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message contains invalid payload property 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload",
+    "keyword": "type",
+    "message": "should be string,number",
+    "params": Object {
+      "type": "string,number",
+    },
+    "schemaPath": "#/properties/payload/type",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message is not a string 1`] = `
+Array [
+  Object {
+    "dataPath": ".content_type",
+    "keyword": "type",
+    "message": "should be string",
+    "params": Object {
+      "type": "string",
+    },
+    "schemaPath": "#/properties/content_type/type",
+  },
+  Object {
+    "dataPath": ".content_type",
+    "keyword": "enum",
+    "message": "should be equal to one of the allowed values",
+    "params": Object {
+      "allowedValues": Array [
+        "text",
+      ],
+    },
+    "schemaPath": "#/properties/content_type/enum",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message missing content_type property 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'content_type'",
+    "params": Object {
+      "missingProperty": "content_type",
+    },
+    "schemaPath": "#/required",
+  },
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'title'",
+    "params": Object {
+      "missingProperty": "title",
+    },
+    "schemaPath": "#/required",
+  },
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'payload'",
+    "params": Object {
+      "missingProperty": "payload",
+    },
+    "schemaPath": "#/required",
+  },
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'image_url'",
+    "params": Object {
+      "missingProperty": "image_url",
+    },
+    "schemaPath": "#/then/required",
+  },
+  Object {
+    "dataPath": "",
+    "keyword": "if",
+    "message": "should match \\"then\\" schema",
+    "params": Object {
+      "failingKeyword": "then",
+    },
+    "schemaPath": "#/if",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message payload is greater than 1000 characters 1`] = `
+Array [
+  Object {
+    "dataPath": ".payload",
+    "keyword": "maxLength",
+    "message": "should NOT be longer than 1000 characters",
+    "params": Object {
+      "limit": 1000,
+    },
+    "schemaPath": "#/properties/payload/maxLength",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message title is greater than 20 characters 1`] = `
+Array [
+  Object {
+    "dataPath": ".title",
+    "keyword": "maxLength",
+    "message": "should NOT be longer than 20 characters",
+    "params": Object {
+      "limit": 20,
+    },
+    "schemaPath": "#/properties/title/maxLength",
+  },
+]
+`;

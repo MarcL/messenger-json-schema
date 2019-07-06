@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text message Invalid message Message contains additional properties 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "additionalProperties",
+    "message": "should NOT have additional properties",
+    "params": Object {
+      "additionalProperty": "invalid",
+    },
+    "schemaPath": "#/additionalProperties",
+  },
+]
+`;
+
+exports[`Text message Invalid message Message is not a string 1`] = `
+Array [
+  Object {
+    "dataPath": "/text",
+    "keyword": "type",
+    "message": "should be string",
+    "params": Object {
+      "type": "string",
+    },
+    "schemaPath": "#/properties/text/type",
+  },
+]
+`;
+
+exports[`Text message Invalid message Message length is greater than 2000 characters 1`] = `
+Array [
+  Object {
+    "dataPath": "/text",
+    "keyword": "maxLength",
+    "message": "should NOT be longer than 2000 characters",
+    "params": Object {
+      "limit": 2000,
+    },
+    "schemaPath": "#/properties/text/maxLength",
+  },
+]
+`;
+
+exports[`Text message Invalid message Message missing text property 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'text'",
+    "params": Object {
+      "missingProperty": "text",
+    },
+    "schemaPath": "#/required",
+  },
+]
+`;

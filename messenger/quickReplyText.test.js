@@ -115,7 +115,7 @@ describe('Quick reply: text message', () => {
             test(testMessage, () => {        
                 validate(givenMessage);
 
-                expect(validate.errors).not.toBeNull();
+                expect(validate.errors).toMatchSnapshot();
             });
         });
 
@@ -129,7 +129,7 @@ describe('Quick reply: text message', () => {
 
             validate(givenMessage);
 
-            expect(validate.errors).not.toBeNull();
+            expect(validate.errors).toMatchSnapshot();
         });
 
         test('Message payload is greater than 1000 characters', () => {
@@ -142,7 +142,7 @@ describe('Quick reply: text message', () => {
 
             validate(givenMessage);
 
-            expect(validate.errors).not.toBeNull();
+            expect(validate.errors).toMatchSnapshot();
         });
     });
 });

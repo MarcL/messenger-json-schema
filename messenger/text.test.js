@@ -1,6 +1,7 @@
 const Ajv = require('ajv');
-const ajv = new Ajv({allErrors: true});
 const textSchema = require('./text');
+
+const ajv = new Ajv({allErrors: true, jsonPointers: true});
 
 describe('Text message', () => {
     let validate;
@@ -46,7 +47,7 @@ describe('Text message', () => {
             test(testMessage, () => {        
                 validate(givenMessage);
 
-                expect(validate.errors).not.toBeNull();
+                expect(validate.errors).toMatchSnapshot();
             });
         });
 
@@ -58,7 +59,7 @@ describe('Text message', () => {
 
             validate(givenMessage);
 
-            expect(validate.errors).not.toBeNull();
+            expect(validate.errors).toMatchSnapshot();
         });
     });
 });

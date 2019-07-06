@@ -52,7 +52,7 @@ describe('Quick reply: email message', () => {
             test(testMessage, () => {        
                 validate(givenMessage);
 
-                expect(validate.errors).not.toBeNull();
+                expect(validate.errors).toMatchSnapshot();
             });
         });
     });
