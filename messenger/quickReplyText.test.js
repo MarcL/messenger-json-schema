@@ -1,6 +1,5 @@
-const Ajv = require('ajv');
-const ajv = new Ajv({allErrors: true});
 const quickReplyText = require('./quickReplyText');
+const ajv = require('./ajv');
 
 describe('Quick reply: text message', () => {
     let validate;

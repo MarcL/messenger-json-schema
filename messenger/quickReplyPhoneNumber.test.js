@@ -1,5 +1,4 @@
-const Ajv = require('ajv');
-const ajv = new Ajv({allErrors: true});
+const ajv = require('./ajv');
 const quickReplyPhoneNumber = require('./quickReplyPhoneNumber');
 
 describe('Quick reply: phone number message', () => {

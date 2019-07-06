@@ -1,7 +1,5 @@
-const Ajv = require('ajv');
+const ajv = require('./ajv');
 const textSchema = require('./text');
-
-const ajv = new Ajv({allErrors: true, jsonPointers: true});
 
 describe('Text message', () => {
     let validate;

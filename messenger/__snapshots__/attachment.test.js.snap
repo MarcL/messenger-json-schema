@@ -3,7 +3,7 @@
 exports[`Attachment message Invalid message Message has invalid attachment.payload.is_reusable property type 1`] = `
 Array [
   Object {
-    "dataPath": ".attachment.payload.is_reusable",
+    "dataPath": "/attachment/payload/is_reusable",
     "keyword": "type",
     "message": "should be boolean",
     "params": Object {
@@ -17,7 +17,7 @@ Array [
 exports[`Attachment message Invalid message Message has invalid attachment.payload.url property 1`] = `
 Array [
   Object {
-    "dataPath": ".attachment.payload.url",
+    "dataPath": "/attachment/payload/url",
     "keyword": "format",
     "message": "should match format \\"uri\\"",
     "params": Object {
@@ -31,7 +31,7 @@ Array [
 exports[`Attachment message Invalid message Message has invalid attachment.type property 1`] = `
 Array [
   Object {
-    "dataPath": ".attachment.type",
+    "dataPath": "/attachment/type",
     "keyword": "enum",
     "message": "should be equal to one of the allowed values",
     "params": Object {
@@ -65,7 +65,7 @@ Array [
 exports[`Attachment message Invalid message Message has no attachment.payload property 1`] = `
 Array [
   Object {
-    "dataPath": ".attachment",
+    "dataPath": "/attachment",
     "keyword": "required",
     "message": "should have required property 'payload'",
     "params": Object {
@@ -79,7 +79,7 @@ Array [
 exports[`Attachment message Invalid message Message has no attachment.payload.url property 1`] = `
 Array [
   Object {
-    "dataPath": ".attachment.payload",
+    "dataPath": "/attachment/payload",
     "keyword": "required",
     "message": "should have required property 'url'",
     "params": Object {
@@ -88,7 +88,7 @@ Array [
     "schemaPath": "#/properties/attachment/properties/payload/oneOf/0/required",
   },
   Object {
-    "dataPath": ".attachment.payload",
+    "dataPath": "/attachment/payload",
     "keyword": "required",
     "message": "should have required property 'attachment_id'",
     "params": Object {
@@ -97,7 +97,7 @@ Array [
     "schemaPath": "#/properties/attachment/properties/payload/oneOf/1/required",
   },
   Object {
-    "dataPath": ".attachment.payload",
+    "dataPath": "/attachment/payload",
     "keyword": "oneOf",
     "message": "should match exactly one schema in oneOf",
     "params": Object {
@@ -111,7 +111,7 @@ Array [
 exports[`Attachment message Invalid message Message has no attachment.type property 1`] = `
 Array [
   Object {
-    "dataPath": ".attachment",
+    "dataPath": "/attachment",
     "keyword": "required",
     "message": "should have required property 'type'",
     "params": Object {
@@ -120,7 +120,7 @@ Array [
     "schemaPath": "#/properties/attachment/required",
   },
   Object {
-    "dataPath": ".attachment",
+    "dataPath": "/attachment",
     "keyword": "required",
     "message": "should have required property 'payload'",
     "params": Object {

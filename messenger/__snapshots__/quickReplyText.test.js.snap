@@ -17,7 +17,7 @@ Array [
 exports[`Quick reply: text message Invalid message Message contains invalid content_type property 1`] = `
 Array [
   Object {
-    "dataPath": ".content_type",
+    "dataPath": "/content_type",
     "keyword": "enum",
     "message": "should be equal to one of the allowed values",
     "params": Object {
@@ -33,7 +33,7 @@ Array [
 exports[`Quick reply: text message Invalid message Message contains invalid image_url property 1`] = `
 Array [
   Object {
-    "dataPath": ".image_url",
+    "dataPath": "/image_url",
     "keyword": "format",
     "message": "should match format \\"uri\\"",
     "params": Object {
@@ -47,7 +47,7 @@ Array [
 exports[`Quick reply: text message Invalid message Message contains invalid payload property 1`] = `
 Array [
   Object {
-    "dataPath": ".payload",
+    "dataPath": "/payload",
     "keyword": "type",
     "message": "should be string,number",
     "params": Object {
@@ -61,7 +61,7 @@ Array [
 exports[`Quick reply: text message Invalid message Message is not a string 1`] = `
 Array [
   Object {
-    "dataPath": ".content_type",
+    "dataPath": "/content_type",
     "keyword": "type",
     "message": "should be string",
     "params": Object {
@@ -70,7 +70,7 @@ Array [
     "schemaPath": "#/properties/content_type/type",
   },
   Object {
-    "dataPath": ".content_type",
+    "dataPath": "/content_type",
     "keyword": "enum",
     "message": "should be equal to one of the allowed values",
     "params": Object {
@@ -136,7 +136,7 @@ Array [
 exports[`Quick reply: text message Invalid message Message payload is greater than 1000 characters 1`] = `
 Array [
   Object {
-    "dataPath": ".payload",
+    "dataPath": "/payload",
     "keyword": "maxLength",
     "message": "should NOT be longer than 1000 characters",
     "params": Object {
@@ -150,7 +150,7 @@ Array [
 exports[`Quick reply: text message Invalid message Message title is greater than 20 characters 1`] = `
 Array [
   Object {
-    "dataPath": ".title",
+    "dataPath": "/title",
     "keyword": "maxLength",
     "message": "should NOT be longer than 20 characters",
     "params": Object {

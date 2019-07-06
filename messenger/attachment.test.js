@@ -1,5 +1,4 @@
-const Ajv = require('ajv');
-const ajv = new Ajv({allErrors: true});
+const ajv = require('./ajv');
 const attachmentSchema = require('./attachment');
 
 describe('Attachment message', () => {

@@ -17,7 +17,7 @@ Array [
 exports[`Quick reply: phone number message Invalid message Message contains invalid content_type property 1`] = `
 Array [
   Object {
-    "dataPath": ".content_type",
+    "dataPath": "/content_type",
     "keyword": "enum",
     "message": "should be equal to one of the allowed values",
     "params": Object {
@@ -33,7 +33,7 @@ Array [
 exports[`Quick reply: phone number message Invalid message Message is not a string 1`] = `
 Array [
   Object {
-    "dataPath": ".content_type",
+    "dataPath": "/content_type",
     "keyword": "type",
     "message": "should be string",
     "params": Object {
@@ -42,7 +42,7 @@ Array [
     "schemaPath": "#/properties/content_type/type",
   },
   Object {
-    "dataPath": ".content_type",
+    "dataPath": "/content_type",
     "keyword": "enum",
     "message": "should be equal to one of the allowed values",
     "params": Object {
