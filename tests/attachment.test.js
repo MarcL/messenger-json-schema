@@ -9,20 +9,106 @@ describe('Attachment message', () => {
         validate = ajv.compile(attachmentSchema);
     })
 
-    test('Valid message with url', () => {
-        const givenMessage = {
-            attachment: {
-                type: 'image',
-                payload: {
-                    url: validImageUri,
-                    is_reusable: true
+    describe('Valid messages', () => {
+        test('Message with url', () => {
+            const givenMessage = {
+                attachment: {
+                    type: 'image',
+                    payload: {
+                        url: validImageUri,
+                        is_reusable: true
+                    }
                 }
-            }
-        };
+            };
 
-        validate(givenMessage);
+            validate(givenMessage);
+            
+            expect(validate.errors).toBeNull();
+        });
+
+        test('Message contains valid text quick reply', () => {
+            const givenMessage = {
+                attachment: {
+                    type: 'image',
+                    payload: {
+                        url: validImageUri,
+                        is_reusable: true
+                    }
+                },
+                quick_replies: [{
+                    content_type: 'text',
+                    title: 'Hello',
+                    payload: 'validPayload',
+                }]
+            };
+
+            validate(givenMessage);
+            
+            expect(validate.errors).toBeNull();
+        });
+
+        test('Message contains valid email quick reply', () => {
+            const givenMessage = {
+                attachment: {
+                    type: 'image',
+                    payload: {
+                        url: validImageUri,
+                        is_reusable: true
+                    }
+                },
+                quick_replies: [{
+                    content_type: 'user_email',
+                }]
+            };
+
+            validate(givenMessage);
+            
+            expect(validate.errors).toBeNull();
+        });
+
+        test('Message contains valid phone number quick reply', () => {
+            const givenMessage = {
+                attachment: {
+                    type: 'image',
+                    payload: {
+                        url: validImageUri,
+                        is_reusable: true
+                    }
+                },
+                quick_replies: [{
+                    content_type: 'user_phone_number',
+                }]
+            };
+
+            validate(givenMessage);
+            
+            expect(validate.errors).toBeNull();
+        });
         
-        expect(validate.errors).toBeNull();
+        test('Message contains multiple quick replies', () => {
+            const givenMessage = {
+                attachment: {
+                    type: 'image',
+                    payload: {
+                        url: validImageUri,
+                        is_reusable: true
+                    }
+                },
+                quick_replies: [{
+                    content_type: 'user_phone_number',
+                }, {
+                    content_type: 'user_email',
+                }, {
+                    content_type: 'text',
+                    title: 'Hello',
+                    payload: 'validPayload',
+                }]
+            };
+
+            validate(givenMessage);
+            
+            expect(validate.errors).toBeNull();
+        });
     });
 
     test('Valid message with attachment_id', () => {

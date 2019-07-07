@@ -40,6 +40,17 @@ const attachmentSchema = {
                     ]
                 }
             }
+        },
+        quick_replies: {
+            type: 'array',
+            maxItems: 13,
+            items: {
+                anyOf: [
+                    {'$ref': '#/definitions/quickReplyTextSchema'},
+                    {'$ref': '#/definitions/quickReplyEmailSchema'},
+                    {'$ref': '#/definitions/quickReplyPhoneNumberSchema'},
+                ]
+            }
         }
     }
 };
