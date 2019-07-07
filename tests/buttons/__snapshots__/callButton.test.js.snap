@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Buttons: call button Invalid message Message contains additional properties 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "additionalProperties",
+    "message": "should NOT have additional properties",
+    "params": Object {
+      "additionalProperty": "invalid",
+    },
+    "schemaPath": "#/additionalProperties",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "pattern",
+    "message": "should match pattern \\"^\\\\+[0-9]+\\"",
+    "params": Object {
+      "pattern": "^\\\\+[0-9]+",
+    },
+    "schemaPath": "#/properties/payload/pattern",
+  },
+]
+`;
+
+exports[`Buttons: call button Invalid message Message has invalid payload phone number 1`] = `
+Array [
+  Object {
+    "dataPath": "/payload",
+    "keyword": "pattern",
+    "message": "should match pattern \\"^\\\\+[0-9]+\\"",
+    "params": Object {
+      "pattern": "^\\\\+[0-9]+",
+    },
+    "schemaPath": "#/properties/payload/pattern",
+  },
+]
+`;
+
+exports[`Buttons: call button Invalid message Message missing payload property 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'payload'",
+    "params": Object {
+      "missingProperty": "payload",
+    },
+    "schemaPath": "#/required",
+  },
+]
+`;
+
+exports[`Buttons: call button Invalid message Message missing title property 1`] = `
+Array [
+  Object {
+    "dataPath": "/type",
+    "keyword": "enum",
+    "message": "should be equal to one of the allowed values",
+    "params": Object {
+      "allowedValues": Array [
+        "phone_number",
+      ],
+    },
+    "schemaPath": "#/properties/type/enum",
+  },
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'title'",
+    "params": Object {
+      "missingProperty": "title",
+    },
+    "schemaPath": "#/required",
+  },
+]
+`;
+
+exports[`Buttons: call button Invalid message Message missing type property 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'type'",
+    "params": Object {
+      "missingProperty": "type",
+    },
+    "schemaPath": "#/required",
+  },
+]
+`;
+
+exports[`Buttons: call button Invalid message Message title is greater than 20 characters 1`] = `
+Array [
+  Object {
+    "dataPath": "/title",
+    "keyword": "maxLength",
+    "message": "should NOT be longer than 20 characters",
+    "params": Object {
+      "limit": 20,
+    },
+    "schemaPath": "#/properties/title/maxLength",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "pattern",
+    "message": "should match pattern \\"^\\\\+[0-9]+\\"",
+    "params": Object {
+      "pattern": "^\\\\+[0-9]+",
+    },
+    "schemaPath": "#/properties/payload/pattern",
+  },
+]
+`;
+
+exports[`Buttons: call button Invalid message Message type is invalid 1`] = `
+Array [
+  Object {
+    "dataPath": "/type",
+    "keyword": "enum",
+    "message": "should be equal to one of the allowed values",
+    "params": Object {
+      "allowedValues": Array [
+        "phone_number",
+      ],
+    },
+    "schemaPath": "#/properties/type/enum",
+  },
+]
+`;
