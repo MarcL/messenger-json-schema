@@ -1,8 +1,11 @@
+const quickReplyDefinitions = require('./quickReplyDefinitions');
+
 const attachmentSchema = {
     '$schema': 'http://json-schema.org/schema#',
     type: 'object',
     additionalProperties: false,
     required: ['attachment'],
+    definitions: quickReplyDefinitions,
     properties: {
         attachment: {
             type: 'object',

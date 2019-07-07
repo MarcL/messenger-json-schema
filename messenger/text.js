@@ -1,9 +1,12 @@
+const quickReplyDefinitions = require('./quickReplyDefinitions');
+
 const textSchema = {
     '$schema': 'http://json-schema.org/schema#',
     '$id': 'https://github.com/MarcL/messenger-json-schema/messenger/text.js',
     type: 'object',
     additionalProperties: false,
     required: ['text'],
+    definitions: quickReplyDefinitions,
     properties: {
         text: {
             type: 'string',
@@ -11,7 +14,14 @@ const textSchema = {
         },
         quick_replies: {
             type: 'array',
-            maxItems: 13
+            maxItems: 13,
+            items: {
+                anyOf: [
+                    {'$ref': '#/definitions/quickReplyTextSchema'},
+                    {'$ref': '#/definitions/quickReplyEmailSchema'},
+                    {'$ref': '#/definitions/quickReplyPhoneNumberSchema'},
+                ]
+            }
         }
     }
 };

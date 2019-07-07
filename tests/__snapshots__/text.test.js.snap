@@ -14,6 +14,20 @@ Array [
 ]
 `;
 
+exports[`Text message Invalid message Message contains more than 13 quick replies 1`] = `
+Array [
+  Object {
+    "dataPath": "/quick_replies",
+    "keyword": "maxItems",
+    "message": "should NOT have more than 13 items",
+    "params": Object {
+      "limit": 13,
+    },
+    "schemaPath": "#/properties/quick_replies/maxItems",
+  },
+]
+`;
+
 exports[`Text message Invalid message Message is not a string 1`] = `
 Array [
   Object {
