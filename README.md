@@ -33,7 +33,7 @@ https://developers.facebook.com/docs/messenger-platform/reference/send-api/
 |[Template: Media](https://developers.facebook.com/docs/messenger-platform/send-messages/template/media)|:x:|
 |[Button: URL](https://developers.facebook.com/docs/messenger-platform/send-messages/buttons#url)|:x:|
 |[Button: Postback](https://developers.facebook.com/docs/messenger-platform/send-messages/buttons#postback)|:x:|
-|[Button: Call](https://developers.facebook.com/docs/messenger-platform/send-messages/buttons#call)|:x:|
+|[Button: Call](https://developers.facebook.com/docs/messenger-platform/send-messages/buttons#call)|:white_check_mark:|
 |[Button: Login](https://developers.facebook.com/docs/messenger-platform/send-messages/buttons#login)|:x:|
 |[Button: Logout](https://developers.facebook.com/docs/messenger-platform/send-messages/buttons#logout)|:x:|
 |[Button: Game Play](https://developers.facebook.com/docs/messenger-platform/send-messages/buttons#game_play)|:x:|
