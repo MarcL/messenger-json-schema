@@ -11,5 +11,8 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "dependencies": {
+    "fluent-schema": "^1.0.5"
   }
 }

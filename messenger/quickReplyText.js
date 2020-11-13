@@ -1,6 +1,6 @@
 const quickReplyTextSchema = {
     '$schema': 'http://json-schema.org/schema#',
-    '$id': 'https://github.com/MarcL/messenger-json-schema/messenger/quickReplyText.js',
+    '$id': '#quickReplyText',
     type: 'object',
     additionalProperties: false,
     required: ['content_type', 'title', 'payload'],
