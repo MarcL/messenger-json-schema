@@ -45,7 +45,7 @@ describe('Quick reply: text message', () => {
         expect(validate.errors).toBeNull();
     });
 
-    test('Message must contain image_url property if title is empty', () => {
+    test('Message must contain image_url property if title is an empty string', () => {
         const givenMessage = {
             content_type: 'text',
             title: '',
@@ -61,7 +61,14 @@ describe('Quick reply: text message', () => {
     describe('Invalid message', () => {
         const invalidScenarios = [
             {
-                testMessage: 'Message is not a string',
+                testMessage: 'Message is missing a content_type property',
+                givenMessage: {
+                    title: 'title',
+                    payload: 'payload'
+                }
+            },
+            {
+                testMessage: 'Message has a content_type which is not a string',
                 givenMessage: {
                     content_type: 100,
                     title: 'title',
@@ -69,8 +76,12 @@ describe('Quick reply: text message', () => {
                 }
             },
             {
-                testMessage: 'Message missing content_type property',
-                givenMessage: {}
+                testMessage: 'Message has a content_type which is invalid',
+                givenMessage: {
+                    content_type: 'invalid',
+                    title: 'title',
+                    payload: 'payload'
+                }
             },
             {
                 testMessage: 'Message contains additional properties',
@@ -82,15 +93,7 @@ describe('Quick reply: text message', () => {
                 }
             },
             {
-                testMessage: 'Message contains invalid content_type property',
-                givenMessage: {
-                    content_type: 'not_user_email',
-                    title: 'title',
-                    payload: 'payload'
-                }
-            },
-            {
-                testMessage: 'Message contains invalid payload property',
+                testMessage: 'Message contains invalid payload type',
                 givenMessage: {
                     content_type: 'text',
                     title: 'title',
@@ -140,7 +143,7 @@ describe('Quick reply: text message', () => {
             };
 
             validate(givenMessage);
-
+            
             expect(validate.errors).toMatchSnapshot();
         });
     });

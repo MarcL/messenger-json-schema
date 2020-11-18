@@ -1,3 +1,19 @@
+const fluent = require('fluent-schema');
+
+const schema = fluent.object()
+    .id('#quickReplyText')
+    .title('Facebook Messenger quick replay text message schema')
+    .additionalProperties(false)
+    .prop('content_type', fluent.string().enum(['text']).required())
+    .prop('title', fluent.string().maxLength(20).required())
+    .prop('payload', fluent.anyOf([fluent.string().maxLength(1000), fluent.number()]))
+    .prop('image_url', fluent.string().format(fluent.FORMATS.URL))
+    // If title is empty, require image_url to be set
+    .ifThen(
+        fluent.object().prop('title', fluent.string().pattern('^$')),
+        fluent.object().prop('image_url', fluent.string().format(fluent.FORMATS.URL).required())
+    );
+
 const quickReplyTextSchema = {
     '$schema': 'http://json-schema.org/schema#',
     '$id': '#quickReplyText',
@@ -35,4 +51,6 @@ const quickReplyTextSchema = {
     }
 };
 
-module.exports = quickReplyTextSchema;
+// console.log(schema.valueOf().properties.payload);
+
+module.exports = schema.valueOf();
