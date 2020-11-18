@@ -108,6 +108,20 @@ describe('Quick reply: text message', () => {
                     payload: 'payload',
                     image_url: ''
                 }
+            },
+            {
+                testMessage: 'Message content_type is "text" but it contains no title',
+                givenMessage: {
+                    content_type: 'text',
+                    payload: 'payload',
+                }
+            },
+            {
+                testMessage: 'Message content_type is "text" but it contains no payload',
+                givenMessage: {
+                    title: 'title',
+                    content_type: 'text'
+                }
             }
         ];
 

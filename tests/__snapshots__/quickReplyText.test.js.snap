@@ -55,8 +55,67 @@ Array [
     "params": Object {},
     "schemaPath": "#/properties/payload/anyOf",
   },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "type",
+    "message": "should be string",
+    "params": Object {
+      "type": "string",
+    },
+    "schemaPath": "#/then/properties/payload/anyOf/0/type",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "type",
+    "message": "should be number",
+    "params": Object {
+      "type": "number",
+    },
+    "schemaPath": "#/then/properties/payload/anyOf/1/type",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "anyOf",
+    "message": "should match some schema in anyOf",
+    "params": Object {},
+    "schemaPath": "#/then/properties/payload/anyOf",
+  },
+  Object {
+    "dataPath": "",
+    "keyword": "if",
+    "message": "should match \\"then\\" schema",
+    "params": Object {
+      "failingKeyword": "then",
+    },
+    "schemaPath": "#/if",
+  },
 ]
 `;
+
+exports[`Quick reply: text message Invalid message Message content_type is "text" but it contains no payload 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'payload'",
+    "params": Object {
+      "missingProperty": "payload",
+    },
+    "schemaPath": "#/then/required",
+  },
+  Object {
+    "dataPath": "",
+    "keyword": "if",
+    "message": "should match \\"then\\" schema",
+    "params": Object {
+      "failingKeyword": "then",
+    },
+    "schemaPath": "#/if",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message content_type is "text" but it contains no title 1`] = `null`;
 
 exports[`Quick reply: text message Invalid message Message has a content_type which is invalid 1`] = `
 Array [
