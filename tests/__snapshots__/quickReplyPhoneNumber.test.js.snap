@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quick reply: phone number message Invalid message Message contains additional properties 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "additionalProperties",
+    "message": "should NOT have additional properties",
+    "params": Object {
+      "additionalProperty": "invalid",
+    },
+    "schemaPath": "#/additionalProperties",
+  },
+]
+`;
+
+exports[`Quick reply: phone number message Invalid message Message contains invalid content_type property 1`] = `
+Array [
+  Object {
+    "dataPath": "/content_type",
+    "keyword": "enum",
+    "message": "should be equal to one of the allowed values",
+    "params": Object {
+      "allowedValues": Array [
+        "user_phone_number",
+      ],
+    },
+    "schemaPath": "#/properties/content_type/enum",
+  },
+]
+`;
+
+exports[`Quick reply: phone number message Invalid message Message is not a string 1`] = `
+Array [
+  Object {
+    "dataPath": "/content_type",
+    "keyword": "type",
+    "message": "should be string",
+    "params": Object {
+      "type": "string",
+    },
+    "schemaPath": "#/properties/content_type/type",
+  },
+  Object {
+    "dataPath": "/content_type",
+    "keyword": "enum",
+    "message": "should be equal to one of the allowed values",
+    "params": Object {
+      "allowedValues": Array [
+        "user_phone_number",
+      ],
+    },
+    "schemaPath": "#/properties/content_type/enum",
+  },
+]
+`;
+
+exports[`Quick reply: phone number message Invalid message Message missing content_type property 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'content_type'",
+    "params": Object {
+      "missingProperty": "content_type",
+    },
+    "schemaPath": "#/required",
+  },
+]
+`;
