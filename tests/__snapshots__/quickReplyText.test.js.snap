@@ -14,7 +14,110 @@ Array [
 ]
 `;
 
-exports[`Quick reply: text message Invalid message Message contains invalid content_type property 1`] = `
+exports[`Quick reply: text message Invalid message Message contains invalid image_url property 1`] = `
+Array [
+  Object {
+    "dataPath": "/image_url",
+    "keyword": "format",
+    "message": "should match format \\"url\\"",
+    "params": Object {
+      "format": "url",
+    },
+    "schemaPath": "#/properties/image_url/format",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message contains invalid payload type 1`] = `
+Array [
+  Object {
+    "dataPath": "/payload",
+    "keyword": "type",
+    "message": "should be string",
+    "params": Object {
+      "type": "string",
+    },
+    "schemaPath": "#/properties/payload/anyOf/0/type",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "type",
+    "message": "should be number",
+    "params": Object {
+      "type": "number",
+    },
+    "schemaPath": "#/properties/payload/anyOf/1/type",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "anyOf",
+    "message": "should match some schema in anyOf",
+    "params": Object {},
+    "schemaPath": "#/properties/payload/anyOf",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "type",
+    "message": "should be string",
+    "params": Object {
+      "type": "string",
+    },
+    "schemaPath": "#/then/properties/payload/anyOf/0/type",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "type",
+    "message": "should be number",
+    "params": Object {
+      "type": "number",
+    },
+    "schemaPath": "#/then/properties/payload/anyOf/1/type",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "anyOf",
+    "message": "should match some schema in anyOf",
+    "params": Object {},
+    "schemaPath": "#/then/properties/payload/anyOf",
+  },
+  Object {
+    "dataPath": "",
+    "keyword": "if",
+    "message": "should match \\"then\\" schema",
+    "params": Object {
+      "failingKeyword": "then",
+    },
+    "schemaPath": "#/if",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message content_type is "text" but it contains no payload 1`] = `
+Array [
+  Object {
+    "dataPath": "",
+    "keyword": "required",
+    "message": "should have required property 'payload'",
+    "params": Object {
+      "missingProperty": "payload",
+    },
+    "schemaPath": "#/then/required",
+  },
+  Object {
+    "dataPath": "",
+    "keyword": "if",
+    "message": "should match \\"then\\" schema",
+    "params": Object {
+      "failingKeyword": "then",
+    },
+    "schemaPath": "#/if",
+  },
+]
+`;
+
+exports[`Quick reply: text message Invalid message Message content_type is "text" but it contains no title 1`] = `null`;
+
+exports[`Quick reply: text message Invalid message Message has a content_type which is invalid 1`] = `
 Array [
   Object {
     "dataPath": "/content_type",
@@ -30,35 +133,7 @@ Array [
 ]
 `;
 
-exports[`Quick reply: text message Invalid message Message contains invalid image_url property 1`] = `
-Array [
-  Object {
-    "dataPath": "/image_url",
-    "keyword": "format",
-    "message": "should match format \\"uri\\"",
-    "params": Object {
-      "format": "uri",
-    },
-    "schemaPath": "#/properties/image_url/format",
-  },
-]
-`;
-
-exports[`Quick reply: text message Invalid message Message contains invalid payload property 1`] = `
-Array [
-  Object {
-    "dataPath": "/payload",
-    "keyword": "type",
-    "message": "should be string,number",
-    "params": Object {
-      "type": "string,number",
-    },
-    "schemaPath": "#/properties/payload/type",
-  },
-]
-`;
-
-exports[`Quick reply: text message Invalid message Message is not a string 1`] = `
+exports[`Quick reply: text message Invalid message Message has a content_type which is not a string 1`] = `
 Array [
   Object {
     "dataPath": "/content_type",
@@ -83,7 +158,7 @@ Array [
 ]
 `;
 
-exports[`Quick reply: text message Invalid message Message missing content_type property 1`] = `
+exports[`Quick reply: text message Invalid message Message is missing a content_type property 1`] = `
 Array [
   Object {
     "dataPath": "",
@@ -93,42 +168,6 @@ Array [
       "missingProperty": "content_type",
     },
     "schemaPath": "#/required",
-  },
-  Object {
-    "dataPath": "",
-    "keyword": "required",
-    "message": "should have required property 'title'",
-    "params": Object {
-      "missingProperty": "title",
-    },
-    "schemaPath": "#/required",
-  },
-  Object {
-    "dataPath": "",
-    "keyword": "required",
-    "message": "should have required property 'payload'",
-    "params": Object {
-      "missingProperty": "payload",
-    },
-    "schemaPath": "#/required",
-  },
-  Object {
-    "dataPath": "",
-    "keyword": "required",
-    "message": "should have required property 'image_url'",
-    "params": Object {
-      "missingProperty": "image_url",
-    },
-    "schemaPath": "#/then/required",
-  },
-  Object {
-    "dataPath": "",
-    "keyword": "if",
-    "message": "should match \\"then\\" schema",
-    "params": Object {
-      "failingKeyword": "then",
-    },
-    "schemaPath": "#/if",
   },
 ]
 `;
@@ -142,7 +181,23 @@ Array [
     "params": Object {
       "limit": 1000,
     },
-    "schemaPath": "#/properties/payload/maxLength",
+    "schemaPath": "#/properties/payload/anyOf/0/maxLength",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "type",
+    "message": "should be number",
+    "params": Object {
+      "type": "number",
+    },
+    "schemaPath": "#/properties/payload/anyOf/1/type",
+  },
+  Object {
+    "dataPath": "/payload",
+    "keyword": "anyOf",
+    "message": "should match some schema in anyOf",
+    "params": Object {},
+    "schemaPath": "#/properties/payload/anyOf",
   },
 ]
 `;

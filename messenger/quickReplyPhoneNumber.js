@@ -1,6 +1,6 @@
-const quickReplyEmailSchema = {
+const quickReplyPhoneNumberSchema = {
     '$schema': 'http://json-schema.org/schema#',
-    '$id': 'https://github.com/MarcL/messenger-json-schema/messenger/quickReplyPhone.js',
+    '$id': '#quickReplyPhoneNumber',
     type: 'object',
     additionalProperties: false,
     required: ['content_type'],
@@ -12,4 +12,4 @@ const quickReplyEmailSchema = {
     }
 };
 
-module.exports = quickReplyEmailSchema;
+module.exports = quickReplyPhoneNumberSchema;
