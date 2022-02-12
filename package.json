@@ -6,7 +6,7 @@
   "author": "Marc Littlemore <marc.littlemore@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "ajv": "^6.10.0",
+    "ajv": "^6.12.3",
     "jest": "^24.8.0"
   },
   "scripts": {
